@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="139-1393405_file-gear-icon-svg-wikimedia-commons-gear-icon.png" />
+    <None Remove="6387426.png" />
+    <None Remove="8182885.png" />
+    <None Remove="gear-icon-png-12.png" />
+    <None Remove="hamburger-menu-4.png" />
+    <None Remove="images.png" />
+    <None Remove="uac_logo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="139-1393405_file-gear-icon-svg-wikimedia-commons-gear-icon.png" />
+    <Resource Include="6387426.png" />
+    <Resource Include="8182885.png" />
+    <Resource Include="gear-icon-png-12.png" />
+    <Resource Include="hamburger-menu-4.png" />
+    <Resource Include="images.png" />
+    <Resource Include="uac_logo.png" />
+  </ItemGroup>
+
+</Project>
