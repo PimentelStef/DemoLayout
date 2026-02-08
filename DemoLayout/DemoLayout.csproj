@@ -10,8 +10,11 @@
 
   <ItemGroup>
     <None Remove="139-1393405_file-gear-icon-svg-wikimedia-commons-gear-icon.png" />
+    <None Remove="2118701.png" />
     <None Remove="6387426.png" />
     <None Remove="8182885.png" />
+    <None Remove="87578.png" />
+    <None Remove="calendar-249.png" />
     <None Remove="gear-icon-png-12.png" />
     <None Remove="hamburger-menu-4.png" />
     <None Remove="images.png" />
@@ -20,8 +23,11 @@
 
   <ItemGroup>
     <Resource Include="139-1393405_file-gear-icon-svg-wikimedia-commons-gear-icon.png" />
+    <Resource Include="2118701.png" />
     <Resource Include="6387426.png" />
     <Resource Include="8182885.png" />
+    <Resource Include="87578.png" />
+    <Resource Include="calendar-249.png" />
     <Resource Include="gear-icon-png-12.png" />
     <Resource Include="hamburger-menu-4.png" />
     <Resource Include="images.png" />

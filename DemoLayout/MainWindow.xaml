@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DemoLayout"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="543" Width="883">
     <Window.Resources>
         <Style TargetType="Button">
             <Setter Property="Margin" Value="15,2,2,2"></Setter>
@@ -15,6 +15,17 @@
             <Setter Property="BorderThickness" Value="0"></Setter>
             <Setter Property="Foreground" Value="White"></Setter>
             <Setter Property="FontSize" Value="10"></Setter>
+        </Style>
+        <Style x:Key="DashboardCard" TargetType="Border">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="CornerRadius" Value="6"/>
+            <Setter Property="Padding" Value="12"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect BlurRadius="5" ShadowDepth="2" Opacity="0.2"/>
+                </Setter.Value>
+            </Setter>
         </Style>
     </Window.Resources>
     <DockPanel>
@@ -55,42 +66,137 @@
             <TextBlock Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" Text="Stefan"></TextBlock>
             <Image Margin="8" Grid.Column="2" Source="/6387426.png"></Image>
         </Grid>
-        <Grid>
+        <Grid Margin="15">
             <Grid.Background>
                 <ImageBrush Opacity="0.2" ImageSource="/uac_logo.png" Stretch="Uniform"/>
             </Grid.Background>
+            <!-- 3 columns -->
             <Grid.ColumnDefinitions>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="1.5*"/>
             </Grid.ColumnDefinitions>
+
+            <!-- rows -->
             <Grid.RowDefinitions>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Label Foreground="Black" Content="Statistics (2026-2027)" FontWeight="Bold"></Label>
-            <Label Foreground="Black" Content="Last 3 Days Application" FontWeight="Bold" Grid.Column="1"></Label>
-            <Label Foreground="Black" Content="For Your Interview" FontWeight="Bold" Grid.Column="2" Background="#FFD21717"></Label>
-            <TextBlock Text="117" VerticalAlignment="Center" FontWeight="Bold"></TextBlock>
-            <TextBlock Text="Total Applicants" VerticalAlignment="Bottom"></TextBlock>
-            <TextBlock Text="2" VerticalAlignment="Center" FontWeight="Bold" Grid.Row="1"></TextBlock>
-            <TextBlock Text="New Applicants" VerticalAlignment="Bottom" Grid.Row="1"></TextBlock>
-            <TextBlock Text="17" VerticalAlignment="Center" FontWeight="Bold" Grid.Row="2"></TextBlock>
-            <TextBlock Text="Completed Requirements" VerticalAlignment="Bottom" Grid.Row="2"></TextBlock>
-            <TextBlock Text="3" VerticalAlignment="Center" FontWeight="Bold" Grid.Row="3"></TextBlock>
-            <TextBlock Text="Applicants Schedule Today" VerticalAlignment="Bottom" Grid.Row="3"></TextBlock>
-            <TextBlock Text="0" VerticalAlignment="Center" FontWeight="Bold" Grid.Row="3" Grid.Column="1"></TextBlock>
-            <TextBlock Text="Higher Education" VerticalAlignment="Bottom" Grid.Row="3" Grid.Column="1"></TextBlock>
-            <TextBlock Text="1" VerticalAlignment="Center" FontWeight="Bold" Grid.Row="2" Grid.Column="1"></TextBlock>
-            <TextBlock Text="Senior High School" VerticalAlignment="Bottom" Grid.Row="2" Grid.Column="1"></TextBlock>
-            <TextBlock Text="6" VerticalAlignment="Center" FontWeight="Bold" Grid.Row="1" Grid.Column="1"></TextBlock>
-            <TextBlock Text="Basic Education" VerticalAlignment="Bottom" Grid.Row="1" Grid.Column="1"></TextBlock>
-            <TextBlock Text="1" VerticalAlignment="Center" FontWeight="Bold" Grid.Column="1"></TextBlock>
-            <TextBlock Text="Preparatory Department" VerticalAlignment="Bottom" Grid.Column="1" />
-            <TextBlock Text="0" VerticalAlignment="Center" FontWeight="Bold" Grid.Column="2" Foreground="White" FontSize="20"></TextBlock>
-            <TextBlock Text="For Your Interview" VerticalAlignment="Bottom" Grid.Column="2" Foreground="White" FontSize="15"></TextBlock>
+
+            <!-- TITLES -->
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <Image Width="18" Height="18" Margin="0,0,5,0" Source="/87578.png"/>
+                <TextBlock Text="Statistics (2026-2027)"
+               FontWeight="Bold"
+               VerticalAlignment="Center"/>
+            </StackPanel>
+
+            <!-- Last 3 Days -->
+            <StackPanel Orientation="Horizontal" Margin="10" Grid.Column="1">
+                <Image Width="18" Height="18" Margin="0,0,5,0" Source="/calendar-249.png"/>
+                <TextBlock Text="Last 3 Days Application"
+               FontWeight="Bold"
+               VerticalAlignment="Center"/>
+            </StackPanel>
+
+            <!-- Interview -->
+            <StackPanel Orientation="Horizontal" Margin="10" Grid.Column="2">
+                <Image Width="18" Height="18" Margin="0,0,5,0" Source="/2118701.png"/>
+                <TextBlock Text="For Your Interview"
+               FontWeight="Bold"
+               VerticalAlignment="Center"/>
+            </StackPanel>
+
+            <!-- LEFT COLUMN -->
+            <Border Style="{StaticResource DashboardCard}" Grid.Row="1">
+                <StackPanel VerticalAlignment="Stretch">
+                    <TextBlock Text="119" FontSize="28" FontWeight="Bold" VerticalAlignment="Center"/>
+                    <TextBlock Text="Total Applicants"/>
+                </StackPanel>
+            </Border>
+
+            <Border Style="{StaticResource DashboardCard}" Grid.Row="2">
+                <StackPanel VerticalAlignment="Stretch">
+                    <TextBlock Text="2" FontSize="28" FontWeight="Bold" VerticalAlignment="Center"/>
+                    <TextBlock Text="New Applications"/>
+                </StackPanel>
+            </Border>
+
+            <Border Style="{StaticResource DashboardCard}" Grid.Row="3">
+                <StackPanel VerticalAlignment="Stretch">
+                    <TextBlock Text="17" FontSize="28" FontWeight="Bold" VerticalAlignment="Center"/>
+                    <TextBlock Text="Completed Requirements"/>
+                </StackPanel>
+            </Border>
+
+            <Border Style="{StaticResource DashboardCard}" Grid.Row="4">
+                <StackPanel VerticalAlignment="Stretch">
+                    <TextBlock Text="3" FontSize="28" FontWeight="Bold" VerticalAlignment="Center"/>
+                    <TextBlock Text="Applicants Scheduled Today"/>
+                </StackPanel>
+            </Border>
+
+            <Border Style="{StaticResource DashboardCard}" Grid.Row="5">
+                <StackPanel VerticalAlignment="Stretch">
+                    <TextBlock Text="0" FontSize="28" FontWeight="Bold" VerticalAlignment="Center"/>
+                    <TextBlock Text="No Show"/>
+                </StackPanel>
+            </Border>
+
+            <!-- MIDDLE COLUMN -->
+            <Border Style="{StaticResource DashboardCard}" Grid.Column="1" Grid.Row="1">
+                <StackPanel VerticalAlignment="Stretch">
+                    <TextBlock Text="0" FontSize="28" FontWeight="Bold" VerticalAlignment="Center"/>
+                    <TextBlock Text="Preparatory Department"/>
+                </StackPanel>
+            </Border>
+
+            <Border Style="{StaticResource DashboardCard}" Grid.Column="1" Grid.Row="2">
+                <StackPanel VerticalAlignment="Stretch">
+                    <TextBlock Text="7" FontSize="28" FontWeight="Bold" VerticalAlignment="Center"/>
+                    <TextBlock Text="Basic Education"/>
+                </StackPanel>
+            </Border>
+
+            <Border Style="{StaticResource DashboardCard}" Grid.Column="1" Grid.Row="3">
+                <StackPanel VerticalAlignment="Stretch">
+                    <TextBlock Text="1" FontSize="28" FontWeight="Bold" VerticalAlignment="Center"/>
+                    <TextBlock Text="Senior High School"/>
+                </StackPanel>
+            </Border>
+
+            <Border Style="{StaticResource DashboardCard}" Grid.Column="1" Grid.Row="4">
+                <StackPanel VerticalAlignment="Stretch">
+                    <TextBlock Text="0" FontSize="28" FontWeight="Bold" VerticalAlignment="Center"/>
+                    <TextBlock Text="Higher Education"/>
+                </StackPanel>
+            </Border>
+
+            <!-- RIGHT COLUMN TALL PANEL -->
+            <Border Grid.Column="2"
+            Grid.Row="1"
+            Grid.RowSpan="1"
+            Background="#FFD21717"
+            CornerRadius="6"
+            Margin="10"
+            Padding="5">
+
+                <StackPanel VerticalAlignment="Top">
+                    <TextBlock Text="0"
+                       FontSize="28"
+                       Foreground="White"
+                       FontWeight="Bold"
+                       HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
+                    <TextBlock Text="For Your Interview"
+                       Foreground="White"
+                       HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                </StackPanel>
+            </Border>
         </Grid>
     </DockPanel>
 </Window>
